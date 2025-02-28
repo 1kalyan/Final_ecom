@@ -1,9 +1,9 @@
-import { Box, Grid, Typography } from "@mui/material";
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import AdjustIcon from "@mui/icons-material/Adjust";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import StarIcon from "@mui/icons-material/Star";
+import { Box, Grid } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import StarIcon from "@mui/icons-material/Star";
 
 const OrderCard = ({ item, order }) => {
   const navigate = useNavigate();
@@ -23,9 +23,7 @@ const OrderCard = ({ item, order }) => {
             />
             <div className="ml-5">
               <p className="mb-2">{item?.product?.title}</p>
-              <p className="opacity-50 text-xs font-semibold space-x-5">
-                <span>Size: {item?.size}</span>
-              </p>
+              
             </div>
           </div>
         </Grid>

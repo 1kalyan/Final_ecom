@@ -14,11 +14,6 @@ import {
   updateProduct,
 } from "../../../Redux/Customers/Product/Action";
 
-const initialSizes = [
-  { name: "S", quantity: 0 },
-  { name: "M", quantity: 0 },
-  { name: "L", quantity: 0 },
-];
 
 const UpdateProductForm = () => {
   const [productData, setProductData] = useState({
@@ -29,7 +24,6 @@ const UpdateProductForm = () => {
     discountedPrice: "",
     price: "",
     discountPersent: "",
-    size: initialSizes,
     quantity: "",
     topLavelCategory: "",
     secondLavelCategory: "",
@@ -49,17 +43,6 @@ const UpdateProductForm = () => {
     }));
   };
 
-  const handleSizeChange = (e, index) => {
-    let { name, value } = e.target;
-    name === "size_quantity" ? (name = "quantity") : (name = e.target.name);
-
-    const sizes = [...productData.size];
-    sizes[index][name] = value;
-    setProductData((prevState) => ({
-      ...prevState,
-      size: sizes,
-    }));
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();

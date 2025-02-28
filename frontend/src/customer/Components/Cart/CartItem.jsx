@@ -1,10 +1,9 @@
-import React from "react";
-import { Button } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { removeCartItem, updateCartItem } from "../../../Redux/Customers/Cart/Action";
-import { IconButton } from "@mui/material";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import { Button, IconButton } from "@mui/material";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { removeCartItem, updateCartItem } from "../../../Redux/Customers/Cart/Action";
 
 const CartItem = ({ item,showButton }) => {
   const dispatch = useDispatch();
@@ -31,7 +30,7 @@ const CartItem = ({ item,showButton }) => {
         </div>
         <div className="ml-5 space-y-1">
           <p className="font-semibold">{item?.product?.title}</p>
-          <p className="opacity-70">Size: {item?.size},White</p>
+          
           <p className="opacity-70 mt-2">Seller: {item?.product?.brand}</p>
           <div className="flex space-x-2 items-center pt-3">
             <p className="opacity-50 line-through">₹{item?.product?.price}</p>

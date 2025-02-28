@@ -1,104 +1,144 @@
 const mens_perfume = [
   {
-    imageUrl: "https://images.javatpoint.com/top10-technologies/images/top-10-perfumes-for-men1.png",
-    brand: "Tom Ford",
-    title: "Tom Ford Noir",
-    discountedPrice: 100,
-    price: 120,
-    discountedPercent: 16.67,
-    type: "Eau de Parfum",
-    description: "Warm notes of Italian Bergamot, Black Pepper, and Patchouli tempered with warm Vanilla, Amber, and Nutmeg."
-  },
-  {
-    imageUrl: "https://images.javatpoint.com/top10-technologies/images/top-10-perfumes-for-men2.png",
-    brand: "Creed",
-    title: "Creed Aventus",
-    discountedPrice: 250,
-    price: 300,
-    discountedPercent: 16.67,
-    type: "Eau de Parfum",
-    description: "A fruity and sweet male perfume with blackcurrant, pineapple, and apple, complemented by woods and musk."
-  },
-  {
-    imageUrl: "https://images.javatpoint.com/top10-technologies/images/top-10-perfumes-for-men3.png",
-    brand: "Christian Dior",
-    title: "Sauvage EDT",
-    discountedPrice: 95,
-    price: 110,
-    discountedPercent: 13.64,
-    type: "Eau de Toilette",
-    description: "Fresh peppery fragrance with Ambroxan, Elemi, and Woods grounded by Citrus for a confident masculinity."
-  },
-  {
-    imageUrl: "https://images.javatpoint.com/top10-technologies/images/top-10-perfumes-for-men4.png",
-    brand: "Giorgio Armani",
-    title: "Acqua Di Gio",
-    discountedPrice: 85,
-    price: 100,
-    discountedPercent: 15,
-    type: "Eau de Toilette",
-    description: "Calabrian bergamot, neroli, and green tangerine with jasmine petals, rosemary, and patchouli."
-  },
-  {
-    imageUrl: "https://images.javatpoint.com/top10-technologies/images/top-10-perfumes-for-men5.png",
-    brand: "Prada",
-    title: "Prada La Homme EDT",
-    discountedPrice: 120,
-    price: 140,
-    discountedPercent: 14.29,
-    type: "Eau de Toilette",
-    description: "Iris and amber with neroli, geranium, and patchouli, creating a vibrant sensory experience."
-  },
-  {
-    imageUrl: "https://images.javatpoint.com/top10-technologies/images/top-10-perfumes-for-men6.png",
-    brand: "Penhaligon's",
-    title: "Juniper Sling",
-    discountedPrice: 80,
-    price: 95,
-    discountedPercent: 15.79,
-    type: "Eau de Toilette",
-    description: "Juniper sharpness blended with Angelica, Black Pepper, Cardamom, and Amber for a sophisticated aroma."
-  },
-  {
-    imageUrl: "https://images.javatpoint.com/top10-technologies/images/top-10-perfumes-for-men7.png",
-    brand: "Versace",
-    title: "Eros",
-    discountedPrice: 75,
+    imageUrl: "https://www.jomalone.co.uk/media/export/cms/products/1000x1000/jo_sku_L00C01_1000x1000_0.png",
+    brand: "Jo Malone",
+    title: "London UK Cologne",
+    discountedPrice: 90,
     price: 90,
-    discountedPercent: 16.67,
-    type: "Eau de Toilette",
-    description: "Aromatic blend inspired by Greek mythology, featuring mint, green apple, and tonka bean."
+    discountedPercent: 0,
+    topLavelCategory: "men",
+    secondLavelCategory: "fragrances",
+    thirdLavelCategory: "citrus",
+    type: "Cologne",
+    description: "A refined and elegant cologne with refreshing notes. Key notes: Grapefruit, lime, and orange blossom."
   },
   {
-    imageUrl: "https://images.javatpoint.com/top10-technologies/images/top-10-perfumes-for-men8.png",
-    brand: "John Varvatos",
-    title: "Artisan Pure",
-    discountedPrice: 70,
+
+    imageUrl: "https://media.johnlewiscontent.com/i/JohnLewis/231745616?fmt=auto&$background-off-white$",
+    brand: "Jo Malone",
+    title: "Lime Basil Mandarin Cologne",
+    discountedPrice: 85,
     price: 85,
-    discountedPercent: 17.65,
-    type: "Eau de Toilette",
-    description: "Sharp, woody, and lemony aroma inspired by the verdant slopes of Xalapa, Mexico."
+    discountedPercent: 0,
+    topLavelCategory: "men",
+    secondLavelCategory: "fragrances",
+    thirdLavelCategory: "citrus",
+    type: "Cologne",
+    description: "A fresh, zesty, and aromatic fragrance. Key notes: Lime, basil, mandarin, and white thyme."
   },
   {
-    imageUrl: "https://images.javatpoint.com/top10-technologies/images/top-10-perfumes-for-men9.png",
-    brand: "Chanel",
-    title: "Bleu De Chanel",
-    discountedPrice: 150,
-    price: 180,
-    discountedPercent: 16.67,
-    type: "Eau de Toilette",
-    description: "Aromatic-woody aromas combined with citrus for a versatile, year-round fragrance."
+
+    imageUrl: "https://www.perfume24x7.com/cdn/shop/products/BurberryWeekendmenA_9afda19f-cd4e-432f-bd3b-f75fc3740fd3.jpg?v=1640243166&width=1080",
+    brand: "Burberry",
+    title: "Weekend for Men",
+    discountedPrice: 55,
+    price: 55,
+    discountedPercent: 0,
+    topLavelCategory: "men",
+    secondLavelCategory: "fragrances",
+    thirdLavelCategory: "citrus",
+    type: "Eau De Toilette",
+    description: "A light, citrus fragrance with a vibrant, woody finish. Key notes: Lemon, grapefruit, tarragon, sandalwood."
   },
   {
-    imageUrl: "https://images.javatpoint.com/top10-technologies/images/top-10-perfumes-for-men10.png",
-    brand: "Dolce & Gabbana",
-    title: "Light Blue Intense",
-    discountedPrice: 110,
-    price: 130,
-    discountedPercent: 15.38,
-    type: "Eau de Parfum",
-    description: "Refreshing citrusy cocktail with mandarin, grapefruit, juniper, and Mediterranean aquatic harmony."
-  }
+
+    imageUrl: "https://m.clinique.ca/media/export/cms/lp/2024/happy/prod_row1_4@1.5x.jpg",
+    brand: "Clinique",
+    title: "Happy",
+    discountedPrice: 50,
+    price: 50,
+    discountedPercent: 0,
+    topLavelCategory: "men",
+    secondLavelCategory: "fragrances",
+    thirdLavelCategory: "citrus",
+    type: "Eau De Parfum",
+    description: "A joyful and uplifting fragrance with fresh, bright notes. Key notes: Citrus, hibiscus, and musk."
+  },
+  {
+
+    imageUrl: "http://t2.gstatic.com/images?q=tbn:ANd9GcTRF23mlm-Ja0n1-Wko8FqERj0B3gZ5AiHLcbvRST0j8Ey59aSF",
+    brand: "Dior",
+    title: "Eau Sauvage",
+    discountedPrice: 95,
+    price: 95,
+    discountedPercent: 0,
+    topLavelCategory: "men",
+    secondLavelCategory: "fragrances",
+    thirdLavelCategory: "citrus",
+    type: "Eau De Toilette",
+    description: "A timeless citrus fragrance with fresh, elegant notes. Key notes: Lemon, rosemary, vetiver, and oakmoss."
+  },
+  {
+
+    imageUrl: "https://www.acquadiparma.com/dw/image/v2/BDPB_PRD/on/demandware.static/-/Sites-adp-master-catalog/default/dw23dd9aa8/images/hi-res-1/ADP009-100ML.2.H1.jpg?sw=780&q=85",
+    brand: "Acqua di Parma",
+    title: "Colonia",
+    discountedPrice: 140,
+    price: 140,
+    discountedPercent: 0,
+    topLavelCategory: "men",
+    secondLavelCategory: "fragrances",
+    thirdLavelCategory: "citrus",
+    type: "Cologne",
+    description: "A classic Italian citrus fragrance with a sophisticated twist. Key notes: Sicilian citrus, lavender, rosemary, and sandalwood."
+  },
+  {
+
+    imageUrl: "https://media.johnlewiscontent.com/i/JohnLewis/233990379?fmt=auto&$background-off-white$&wid=117&hei=156",
+    brand: "Balmain",
+    title: "Monsieur Balmain edt",
+    discountedPrice: 70,
+    price: 70,
+    discountedPercent: 0,
+    topLavelCategory: "men",
+    secondLavelCategory: "fragrances",
+    thirdLavelCategory: "citrus",
+    type: "Eau De Toilette",
+    description: "A refined, fresh fragrance with a masculine character. Key notes: Lemon, tarragon, amber, and leather."
+  },
+  {
+
+    imageUrl: "https://sdcdn.io/tf/tf_sku_T0M901_2000x2000_1.png?height=700px&width=700px",
+    brand: "Tom Ford",
+    title: "Neroli Portofino",
+    discountedPrice: 250,
+    price: 250,
+    discountedPercent: 0,
+    topLavelCategory: "men",
+    secondLavelCategory: "fragrances",
+    thirdLavelCategory: "citrus",
+    type: "Eau De Parfum",
+    description: "A luxurious and refreshing citrus fragrance with Mediterranean influences. Key notes: Neroli, bergamot, and orange blossom."
+  },
+  {
+
+    imageUrl: "https://www.jomalone.co.uk/media/export/cms/products/1000x1000/jo_sku_LAPG01_1000x1000_0.png",
+    brand: "Jo Malone",
+    title: "Grapefruit Cologne",
+    discountedPrice: 80,
+    price: 80,
+    discountedPercent: 0,
+    topLavelCategory: "men",
+    secondLavelCategory: "fragrances",
+    thirdLavelCategory: "citrus",
+    type: "Cologne",
+    description: "A bright, fresh fragrance with zesty grapefruit notes. Key notes: Grapefruit, rosemary, and mint."
+  },
+  {
+
+    imageUrl: "https://thealphamen.com/cdn/shop/files/Eau_de_Parfum_-_Gentlemen_s_Cologne_1000x.jpg?v=1725284531",
+    brand: "BYREDO",
+    title: "Sunday Cologne Eau de Parfum",
+    discountedPrice: 175,
+    price: 175,
+    discountedPercent: 0,
+    topLavelCategory: "men",
+    secondLavelCategory: "fragrances",
+    thirdLavelCategory: "citrus",
+    type: "Eau De Parfum",
+    description: "A fresh, herbal, and citrus fragrance for the modern man. Key notes: Lemon, bergamot, and lavender."
+  },
+  
 ];
 
 export default mens_perfume;

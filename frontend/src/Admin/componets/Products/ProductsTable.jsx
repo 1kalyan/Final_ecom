@@ -53,8 +53,6 @@ const ProductsTable = () => {
     // setFilterValue({ availability, category, sort });
     const data = {
       category:category || "",
-     
-      sizes: [],
       minPrice: 0,
       maxPrice: 100000,
       minDiscount: 0,

@@ -25,7 +25,7 @@ async function createOrder(user, shippAddress) {
       price: item.price,
       product: item.product,
       quantity: item.quantity,
-      size: item.size,
+     
       userId: item.userId,
       discountedPrice: item.discountedPrice,
     });

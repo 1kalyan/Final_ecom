@@ -53,7 +53,7 @@ async function createProduct(reqData) {
     imageUrl: reqData.imageUrl,
     brand: reqData.brand,
     price: reqData.price,
-    sizes: reqData.size,
+   
     quantity: reqData.quantity,
     category: thirdLevel._id,
   });
@@ -95,8 +95,6 @@ async function findProductById(id) {
 async function getAllProducts(reqQuery) {
   let {
     category,
-    
-    sizes,
     minPrice,
     maxPrice,
     minDiscount,
@@ -118,11 +116,6 @@ async function getAllProducts(reqQuery) {
 
   
 
-  if (sizes) {
-    const sizesSet = new Set(sizes);
-    
-    query = query.where("sizes.name").in([...sizesSet]);
-  }
 
   if (minPrice && maxPrice) {
     query = query.where("discountedPrice").gte(minPrice).lte(maxPrice);

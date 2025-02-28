@@ -1,19 +1,17 @@
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import {
   Button,
-  Divider,
   Grid,
   Rating,
   TextField,
   Typography,
-  useMediaQuery,
+  useMediaQuery
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { useDispatch, useSelector } from "react-redux";
-import { createReview } from "../../../Redux/Customers/Review/Action";
 import { useNavigate, useParams } from "react-router-dom";
 import { findProductById } from "../../../Redux/Customers/Product/Action";
-import CustomerRoutes from "../../../Routers/CustomerRoutes";
+import { createReview } from "../../../Redux/Customers/Review/Action";
 
 const RateProduct = () => {
   const [formData, setFormData] = useState({ title: "", description: "" });
@@ -75,7 +73,7 @@ const RateProduct = () => {
               {customersProduct.product?.brand}
             </p>
             <p>₹{customersProduct.product?.price}</p>
-            <p>Size: Free</p>
+            
            {customersProduct.product?.color && <p>Color: {customersProduct.product?.color}</p>}
             <div className="flex items-center space-x-3">
               <Rating name="read-only" value={4.6} precision={0.5} readOnly />

@@ -83,9 +83,7 @@ const OrderDetails = () => {
                 />
                 <div className="ml-5 space-y-2">
                   <p className="">{item.product.title}</p>
-                  <p className="opacity-50 text-xs font-semibold space-x-5">
-                    <span>Size: {item.size}</span>
-                  </p>
+                 
                   <p>Seller: {item.product.brand}</p>
                   <p>₹{item.price} </p>
                 </div>

@@ -1,4 +1,3 @@
-import { RadioGroup } from "@headlessui/react";
 import { Box, Button, Grid, LinearProgress, Rating } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,7 +10,7 @@ import HomeProductCard from "../../Home/HomeProductCard";
 import ProductReviewCard from "./ProductReviewCard";
 
 const product = {
-  name: "Basic Tee 6-Pack",
+  name: "Citrus",
   price: "₹996",
   href: "#",
   breadcrumbs: [
@@ -20,38 +19,24 @@ const product = {
   ],
   images: [
     {
-      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg",
+      src: "https://media.johnlewiscontent.com/i/JohnLewis/231745616?fmt=auto&$background-off-white$",
       alt: "Two each of gray, white, and black shirts laying flat.",
-    },
-    {
-      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg",
-      alt: "Model wearing plain black basic tee.",
-    },
-    {
-      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg",
-      alt: "Model wearing plain gray basic tee.",
-    },
-    {
-      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg",
-      alt: "Model wearing plain white basic tee.",
-    },
+    }
+
   ],
   
-  sizes: [
-    { name: "S", inStock: true },
-    { name: "M", inStock: true },
-    { name: "L", inStock: true },
-  ],
-  description:
-    'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
-  highlights: [
-    "Hand cut and sewn locally",
-    "Dyed with our proprietary colors",
-    "Pre-washed & pre-shrunk",
-    "Ultra-soft 100% cotton",
-  ],
-  details:
-    'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
+  description:  
+  'The Essenza Elegant Collection lets you express your unique essence with six exquisite fragrances. Feeling bold? Embrace the deep allure of "Midnight Bloom." Looking for a timeless classic? Try our signature "Velvet Oud." Need a fresh and uplifting touch? Our "Citrus Bliss" scent has you covered.',
+
+    highlights: [
+      "Exquisite, long-lasting fragrances",
+      "Crafted with premium ingredients",
+      "Elegantly designed packaging",
+      "Perfect for any occasion",
+    ],
+    details:  
+    'Our exclusive collection features six signature fragrances, each crafted for a unique experience. Subscribe to our fragrance club and be the first to explore new, captivating scents, including our upcoming "Midnight Bloom" limited edition.',
+  
 };
 const reviews = { href: "#", average: 4, totalCount: 117 };
 
@@ -60,7 +45,6 @@ function classNames(...classes) {
 }
 
 export default function ProductDetails() {
-  const [selectedSize, setSelectedSize] = useState();
   const [activeImage, setActiveImage] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -74,7 +58,7 @@ export default function ProductDetails() {
   };
 
   const handleSubmit = () => {
-    const data = { productId, size: selectedSize.name };
+    const data = { productId };
     dispatch(addItemToCart({ data, jwt }));
     navigate("/cart");
   };
@@ -140,20 +124,7 @@ export default function ProductDetails() {
                 className="h-full w-full object-cover object-center"
               />
             </div>
-            <div className="flex flex-wrap space-x-5 justify-center">
-              {product.images.map((image) => (
-                <div
-                  onClick={() => handleSetActiveImage(image)}
-                  className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg max-w-[5rem] max-h-[5rem] mt-4"
-                >
-                  <img
-                    src={image.src}
-                    alt={product.images[1].alt}
-                    className="h-full w-full object-cover object-center"
-                  />
-                </div>
-              ))}
-            </div>
+            
           </div>
 
           {/* Product info */}
@@ -203,7 +174,7 @@ export default function ProductDetails() {
 
               <form className="mt-10" onSubmit={handleSubmit}>
                 {/* Sizes */}
-                <div className="mt-10">
+                {/* <div className="mt-10">
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-medium text-gray-900">Size</h3>
                   </div>
@@ -275,7 +246,7 @@ export default function ProductDetails() {
                       ))}
                     </div>
                   </RadioGroup>
-                </div>
+                </div> */}
 
                 <Button
                   variant="contained"

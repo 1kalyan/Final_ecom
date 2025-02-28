@@ -1,13 +1,11 @@
+import { Alert, AlertTitle, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updatePayment } from "../../../Redux/Customers/Payment/Action";
-import { Alert, AlertTitle, Box, Grid } from "@mui/material";
-import { deepPurple } from "@mui/material/colors";
-import StarIcon from "@mui/icons-material/Star";
-import { getOrderById } from "../../../Redux/Customers/Order/Action";
-import OrderTraker from "../orders/OrderTraker";
-import AddressCard from "../adreess/AdreessCard";
 import { useParams } from "react-router-dom";
+import { getOrderById } from "../../../Redux/Customers/Order/Action";
+import { updatePayment } from "../../../Redux/Customers/Payment/Action";
+import AddressCard from "../adreess/AdreessCard";
+import OrderTraker from "../orders/OrderTraker";
 
 const PaymentSuccess = () => {
   // razorpay_payment_link_reference_id
@@ -72,9 +70,7 @@ const PaymentSuccess = () => {
                 />
                 <div className="ml-5 space-y-2">
                   <p className="">{item.product.title}</p>
-                  <p className="opacity-50 text-xs font-semibold space-x-5">
-                    <span>Color: pink</span> <span>Size: {item.size}</span>
-                  </p>
+                  
                   <p>Seller: {item.product.brand}</p>
                   <p>₹{item.price}</p>
                 </div>

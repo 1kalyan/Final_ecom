@@ -10,31 +10,26 @@ import { createProduct } from "../../../Redux/Customers/Product/Action";
 import "./CreateProductForm.css";
 
 
-const initialSizes = [
-  { name: "S", quantity: 0 },
-  { name: "M", quantity: 0 },
-  { name: "L", quantity: 0 },
-];
+
 
 const CreateProductForm = () => {
-  
+
   const [productData, setProductData] = useState({
     imageUrl: "",
     brand: "",
     title: "",
-    
+
     discountedPrice: "",
     price: "",
     discountPersent: "",
-    size: initialSizes,
     quantity: "",
     topLavelCategory: "",
     secondLavelCategory: "",
     thirdLavelCategory: "",
     description: "",
   });
-const dispatch=useDispatch();
-const jwt=localStorage.getItem("jwt")
+  const dispatch = useDispatch();
+  const jwt = localStorage.getItem("jwt")
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,26 +39,6 @@ const jwt=localStorage.getItem("jwt")
     }));
   };
 
-  const handleSizeChange = (e, index) => {
-    let { name, value } = e.target;
-    name==="size_quantity"?name="quantity":name=e.target.name;
-
-    const sizes = [...productData.size];
-    sizes[index][name] = value;
-    setProductData((prevState) => ({
-      ...prevState,
-      size: sizes,
-    }));
-  };
-
-  const handleAddSize = () => {
-    const sizes = [...productData.size];
-    sizes.push({ name: "", quantity: "" });
-    setProductData((prevState) => ({
-      ...prevState,
-      size: sizes,
-    }));
-  };
 
   // const handleRemoveSize = (index) => {
   //   const sizes = [...productData.size];
@@ -76,7 +51,7 @@ const jwt=localStorage.getItem("jwt")
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createProduct({data:productData,jwt}))
+    dispatch(createProduct({ data: productData, jwt }))
     console.log(productData);
   };
 
@@ -122,7 +97,7 @@ const jwt=localStorage.getItem("jwt")
               onChange={handleChange}
             />
           </Grid>
-        
+
           <Grid item xs={12} sm={6}>
             <TextField
               fullWidth
@@ -132,7 +107,7 @@ const jwt=localStorage.getItem("jwt")
               onChange={handleChange}
             />
           </Grid>
-          
+
           <Grid item xs={12} sm={6}>
             <TextField
               fullWidth
@@ -146,7 +121,7 @@ const jwt=localStorage.getItem("jwt")
           <Grid item xs={12} sm={4}>
             <TextField
               fullWidth
-              label="Price"
+              label="Discount Price"
               name="price"
               value={productData.price}
               onChange={handleChange}
@@ -156,14 +131,14 @@ const jwt=localStorage.getItem("jwt")
           <Grid item xs={12} sm={4}>
             <TextField
               fullWidth
-              label="Discounted Price"
+              label="Price"
               name="discountedPrice"
               value={productData.discountedPrice}
               onChange={handleChange}
               type="number"
             />
           </Grid>
-          
+
           <Grid item xs={12} sm={4}>
             <TextField
               fullWidth
@@ -185,7 +160,7 @@ const jwt=localStorage.getItem("jwt")
               >
                 <MenuItem value="men">Men</MenuItem>
                 <MenuItem value="women">Women</MenuItem>
-                <MenuItem value="kids">Kids</MenuItem>
+                
               </Select>
             </FormControl>
           </Grid>
@@ -199,8 +174,7 @@ const jwt=localStorage.getItem("jwt")
                 label="Second Level Category"
               >
                 <MenuItem value="fragrance">Fragrance</MenuItem>
-                <MenuItem value="accessories">Accessories</MenuItem>
-                <MenuItem value="brands">Brands</MenuItem>
+                
               </Select>
             </FormControl>
           </Grid>
@@ -213,10 +187,10 @@ const jwt=localStorage.getItem("jwt")
                 onChange={handleChange}
                 label="Third Level Category"
               >
+                <MenuItem value="citrus">Citrus</MenuItem>
                 <MenuItem value="floral">Floral</MenuItem>
                 <MenuItem value="oriental">Oriental</MenuItem>
                 <MenuItem value="musk">Musk</MenuItem>
-               
                 <MenuItem value="amber">Amber</MenuItem>
               </Select>
             </FormControl>
@@ -233,30 +207,7 @@ const jwt=localStorage.getItem("jwt")
               value={productData.description}
             />
           </Grid>
-          {productData.size.map((size, index) => (
-            <Grid container item spacing={3} >
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  label="Size Name"
-                  name="name"
-                  value={size.name}
-                  onChange={(event) => handleSizeChange(event, index)}
-                  required
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  label="Quantity"
-                  name="size_quantity"
-                  type="number"
-                  onChange={(event) => handleSizeChange(event, index)}
-                  required
-                  fullWidth
-                />
-              </Grid> </Grid>
-            
-          ))}
+
           <Grid item xs={12} >
             <Button
               variant="contained"

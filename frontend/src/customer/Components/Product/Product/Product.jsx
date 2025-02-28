@@ -7,13 +7,10 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import Pagination from "@mui/material/Pagination";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
 import { Fragment, useState } from "react";
 
+import { FormControl, FormControlLabel, Radio, RadioGroup } from "@mui/material";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
@@ -22,7 +19,7 @@ import {
 } from "../../../../Redux/Customers/Product/Action";
 import BackdropComponent from "../../BackDrop/Backdrop";
 import ProductCard from "../ProductCard/ProductCard";
-import { filters, singleFilter, sortOptions } from "./FilterData";
+import { singleFilter, sortOptions } from "./FilterData";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -45,8 +42,6 @@ export default function Product() {
   // const filter = decodeURIComponent(location.search);
   const decodedQueryString = decodeURIComponent(location.search);
   const searchParams = new URLSearchParams(decodedQueryString);
-  const colorValue = searchParams.get("color");
-  const sizeValue = searchParams.get("size");
   const price = searchParams.get("price");
   const disccount = searchParams.get("disccout");
   const sortValue = searchParams.get("sort");
@@ -72,8 +67,10 @@ export default function Product() {
     const [minPrice, maxPrice] =
       price === null ? [0, 0] : price.split("-").map(Number);
     const data = {
-      category: param.lavelThree,
-      sizes: sizeValue || [],
+      // category: param.lavelThree,
+      category: [param.lavelOne, param.lavelTwo, param.lavelThree],
+
+     
       minPrice: minPrice || 0,
       maxPrice: maxPrice || 10000,
       minDiscount: disccount || 0,
@@ -82,16 +79,19 @@ export default function Product() {
       pageSize: 10,
       stock: stock,
     };
+    console.log(data);
     dispatch(findProducts(data));
   }, [
+    param.lavelOne,
+    param.lavelTwo,
     param.lavelThree,
-    sizeValue,
     price,
     disccount,
     sortValue,
     pageNumber,
     stock,
   ]);
+  
 
   const handleFilter = (value, sectionId) => {
     const searchParams = new URLSearchParams(location.search);
@@ -184,7 +184,7 @@ export default function Product() {
 
                   {/* Filters */}
                   <form className="mt-4 border-t border-gray-200">
-                    {filters.map((section) => (
+                    {singleFilter.map((section) => (
                       <Disclosure
                         as="div"
                         key={section.id}
@@ -333,7 +333,7 @@ export default function Product() {
               <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
                 {/* Filters */}
                 <form className="hidden lg:block border rounded-md p-5">
-                  {filters.map((section) => (
+                  {/* {filters.map((section) => (
                     <Disclosure
                       // defaultOpen={false}
                       as="div"
@@ -393,7 +393,7 @@ export default function Product() {
                         </>
                       )}
                     </Disclosure>
-                  ))}
+                  ))} */}
                   {singleFilter.map((section) => (
                     <Disclosure
                       // defaultOpen={true}

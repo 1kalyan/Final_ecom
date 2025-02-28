@@ -42,8 +42,8 @@ async function updateCartItem(userId, cartItemId, cartItemData) {
 }
 
 // Check if a cart item already exists in the user's cart
-async function isCartItemExist(cart, product, size, userId) {
-  const cartItem = await CartItem.findOne({ cart, product, size, userId });
+async function isCartItemExist(cart, product, userId) {
+  const cartItem = await CartItem.findOne({ cart, product, userId });
   return cartItem;
 }
 

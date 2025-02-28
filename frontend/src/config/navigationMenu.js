@@ -23,10 +23,10 @@ export const navigation = {
             name: 'Fragrance',
             items: [
               { name: 'Floral', id:"floral", href: `{women/fragrance/floral}` },
-              { name: 'Oriental', id:"oriental", href: '#' },
+              { name: 'Oriental', id:"oriental", href: `{women/fragrance/oriental}` },
               { name: 'Aquatic', id: 'aquatic' },
               { name: 'Amber', id: 'amber' },
-              { name: 'Citrus', id: 'citrus' },
+              { name: 'Citrus', id: 'citrus', href: `{women/fragrance/citrus}` },
               { name: 'Musk', id: 'musk' },
               
               

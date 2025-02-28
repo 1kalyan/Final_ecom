@@ -53,7 +53,7 @@ async function createProduct(req) {
     imageUrl: req.getImageUrl(),
     brand: req.getBrand(),
     price: req.getPrice(),
-    sizes: req.getSize(),
+    
     quantity: req.getQuantity(),
     category: thirdLevel._id,
     createdAt: new Date(),
@@ -69,7 +69,7 @@ async function deleteProduct(productId) {
   const product = await findProductById(productId);
 
   console.log('delete product ', product.getId(), ' - ', productId);
-  product.getSizes().clear();
+  
   await product.remove();
 
   return 'Product deleted Successfully';
@@ -112,7 +112,7 @@ async function searchProduct(query) {
   return Product.searchProduct(query);
 }
 
-async function getAllProduct(category, sizes, minPrice, maxPrice, minDiscount, sort, stock, pageNumber, pageSize) {
+async function getAllProduct(category, minPrice, maxPrice, minDiscount, sort, stock, pageNumber, pageSize) {
   // Implement the filtering logic
   // ...
 }
